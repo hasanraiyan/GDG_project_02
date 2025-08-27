@@ -1,0 +1,78 @@
+/* Base styles and light/dark theme variables */
+:root {
+  --bg-light: #e0e5ec;
+  --shadow-light: #fff;
+  --shadow-dark: #c0c8d2;
+  --text-light: #222;
+  --x-color: #1e88e5;
+  --o-color: #e91e63;
+}
+body {
+  background: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.5s;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+body.dark {
+  --bg-light: #2b2b2b;
+  --shadow-light: #3a3a3a;
+  --shadow-dark: #121212;
+  --text-light: #eee;
+}
+
+/* Container styles */
+.game-container, .mode-modal, .theme-toggle {
+  margin: 20px auto;
+  padding: 20px;
+  width: 320px;
+  background: var(--bg-light);
+  border-radius: 16px;
+  box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+}
+.hidden { display: none; }
+
+/* Back button styling */
+.back-btn {
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+/* Board & cells */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 12px;
+  margin: 10px auto;
+}
+.cell {
+  background: var(--bg-light);
+  border-radius: 12px;
+  box-shadow: inset 5px 5px 10px var(--shadow-dark), inset -5px -5px 10px var(--shadow-light);
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cell:hover { transform: scale(1.05); }
+.cell.x { color: var(--x-color); }
+.cell.o { color: var(--o-color); }
+.cell.win { box-shadow: 0 0 8px 4px gold !important; }
+
+/* Buttons */
+.controls button, .mode-modal button, .theme-toggle button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 5px 5px 10px var(--shadow-dark), -5px -5px 10px var(--shadow-light);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+.controls button:hover, .mode-modal button:hover, .theme-toggle button:hover {
+  transform: scale(1.05);
+}

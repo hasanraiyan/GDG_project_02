@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced Tic-Tac-Toe with AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Mode selection modal -->
+  <div class="mode-modal" id="modeModal">
+    <button id="btn-pvp">Player vs Player</button>
+    <button id="btn-ai">Player vs AI</button>
+  </div>
+
+  <!-- Theme toggle -->
+  <div class="theme-toggle">
+    <button id="btn-toggle-theme">Toggle Light/Dark</button>
+  </div>
+
+  <!-- Main game UI -->
+  <div class="game-container hidden" id="game">
+    <h1>Tic-Tac-Toe</h1>
+
+    <!-- Back button to mode selection -->
+    <button id="btn-back" class="back-btn">← Back to Mode </button>
+
+    <div class="scoreboard">
+      <div>X Score: <span id="score-x">0</span></div>
+      <div>O Score: <span id="score-o">0</span></div>
+    </div>
+    <div class="timers">
+      <div>X Time: <span id="time-x">0.0</span>s</div>
+      <div>O Time: <span id="time-o">0.0</span>s</div>
+    </div>
+    <div id="board" class="board"></div>
+    <div id="status">Game starting...</div>
+    <div class="controls">
+      <button id="btn-play-again">Play Again</button>
+      <button id="btn-new-game">New Game</button>
+    </div>
+  </div>
+
+  <!-- Sounds -->
+  <audio id="snd-move" src="click.mp3"></audio>
+  <audio id="snd-win" src="win.mp3"></audio>
+  <audio id="snd-draw" src="draw.mp3"></audio>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
